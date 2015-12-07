@@ -1,10 +1,10 @@
 <?php
 $conn = new mysqli(
 
-
+    "Azure"
     "1304963"
     "1304963"
-    "Users"
+    "User"
 );
 
 /*Establishes connection*/
