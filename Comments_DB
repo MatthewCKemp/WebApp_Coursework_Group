@@ -1,0 +1,43 @@
+<?php
+$conn = new mysqli(
+
+    "Azure"
+    "1304963"
+    "1304963"
+    "Comments"
+);
+
+/*Establishes connection*/
+
+//$conn - newmysqli($servername, $username, $password, $dbname);
+/*Connection check*/
+if ($conn->connect_error) {
+  die("Connection has failed " . $conn->connect_error);
+}
+
+/*sql to create the COMMENTS table*/
+
+$sql = "CREATE TABLE Comments (
+id INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+comID         CHAR(4),
+description   VARCHAR(60),
+com_date      DATETIME,
+userID        CHAR(4) NOT NULL,
+adventID      CHAR (4) NOT NULL,
+
+CONSTRAINT pk_comID PRIMERY KEY comID,
+CONSTRAINT fk_userID FOREIGN KEY (user_ID) REFERENCES Users (userID),
+CONSTRAINT fk_adventID FOREIGN KEY (adventID) REFERENCES Adventure (adventID)
+
+) ENGINE = MYISAM ;
+";
+
+
+if ($conn->query($sql) === TRUE) {
+  echo "Table markers created";
+} else {
+  echo "Error found creating table " . $conn->error;
+}
+
+$conn->close();
+?>
