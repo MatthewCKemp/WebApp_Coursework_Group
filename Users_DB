@@ -4,7 +4,7 @@ $conn = new mysqli(
     "eu-cdbr-azure-west-c.cloudapp.net"
     "befd2db9fe76ad"
     "5a698004"
-    "Users"
+    "WebApp_Coursework"
 );
 
 /*Establishes connection*/
@@ -28,8 +28,10 @@ age     INT
 reader  BIT,
 author  BIT,
 admin   BIT,
+privID  CHAR ( 4 ) NOT NULL,
 
 CONSTRAINT pkUser PRIMARY KEY (userID)
+CONSTRAINT fk_privID FOREIGN KEY (privID) REFERENCES Privileges (privID),
 
 ) ENGINE = MYISAM ;
 ";
