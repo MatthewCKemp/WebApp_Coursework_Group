@@ -1,9 +1,21 @@
 <?php
 $conn = new mysqli(
 
+
+    "1304963"
+    "1304963"
+    "Users"
 );
 
-//Creates sql table
+/*Establishes connection*/
+
+//$conn - newmysqli($servername, $username, $password, $dbname);
+/*Connection check*/
+if ($conn->connect_error) {
+  die("Connection has failed " . $conn->connect_error);
+}
+
+/*Creates sql table*/
 
 $sql = "CREATE TABLE Users (
 id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -16,3 +28,5 @@ age     INTEGER
 reader  BIT,
 author  BIT,
 admin   BIT,
+) ENGINE = MYISAM ;
+";
