@@ -4,7 +4,7 @@ $conn = new mysqli(
     "Azure"
     "1304963"
     "1304963"
-    "Privilege"
+    "Privileges"
 );
 
 /*Establishes connection*/
@@ -17,12 +17,15 @@ if ($conn->connect_error) {
 
 /*Creates sql table*/
 
-$sql = "CREATE TABLE Privilege (
+$sql = "CREATE TABLE Privileges (
 id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 privID       CHAR ( 4 ) NOT NULL,
 Description  VARCHAR( 80 ) NOT NULL,
 userID       CHAR ( 4 ) NOT NULL,
-CONSTRAINT pkPrivilege PRIMARY KEY (userID)
+
+CONSTRAINT pkPrivilege PRIMARY KEY (privID)
+CONSTRAINT fk_userID FOREIGN KEY (userID) REFERENCES Users (userID)
+
 ) ENGINE = MYISAM ;
 ";
 
