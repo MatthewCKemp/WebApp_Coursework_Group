@@ -1,0 +1,39 @@
+<?php
+$conn = new mysqli(
+
+    "eu-cdbr-azure-west-c.cloudapp.net"
+    "befd2db9fe76ad"
+    "5a698004"
+    "WebApp_Coursework"
+);
+
+/*Establishes connection*/
+
+//$conn - newmysqli($servername, $username, $password, $dbname);
+/*Connection check*/
+if ($conn->connect_error) {
+  die("Connection has failed " . $conn->connect_error);
+}
+
+/*populate Users table */
+
+$sql = "
+INSERT INTO Users (userID, name, country, email, phone, age, reader, author, admin) VALUES ('U001', 'Tsvetoslava Marinova', 'Bulgaria', 'tsvetoslavka@gmail.com', '07459625347', '21', '0', '1', '0');
+INSERT INTO Users (userID, name, country, email, phone, age, reader, author, admin) VALUES ('U002', 'Robert Dohring', 'USA', 'robert.dohring@gmail.com', '07968355642', '21', '0', '1', '1');
+INSERT INTO Users (userID, name, country, email, phone, age, reader, author, admin) VALUES ('U003', 'Cameron Carroll', 'UK', 'cameroncarroll.cam@gmail.com', '07665399457', '21', '0', '1', '0');
+INSERT INTO Users (userID, name, country, email, phone, age, reader, author, admin) VALUES ('U004', 'Matthew Kemp', 'UK', 'matthew.kemp@gmail.com', '07364255948', '21', '0', '0', '1');
+INSERT INTO Users (userID, name, country, email, phone, age, reader, author, admin) VALUES ('U005', 'Emma Harrison', 'Germany', 'emma.a.h@gmail.com', '06954321576', '36', '1', '0', '0');
+INSERT INTO Users (userID, name, country, email, phone, age, reader, author, admin) VALUES ('U006', 'Hristina Dimitrova', 'Bulgaria', 'hristina.vl.dimitrova@gmail.com', '07569432261', '29', '1', '0', '0');
+INSERT INTO Users (userID, name, country, email, phone, age, reader, author, admin) VALUES ('U007', 'Tom Parks', 'USA', 't.g.parks@gamil.com', '07954875697', '56', '1', '0', '0');
+INSERT INTO Users (userID, name, country, email, phone, age, reader, author, admin) VALUES ('U008', 'Dan Simpson', 'Argentina', 'dan.v.simpson@gamil.com', '05694322159', '41', '1', '0', '0');
+INSERT INTO Users (userID, name, country, email, phone, age, reader, author, admin) VALUES ('U009', 'Trudy Michelson', 'Japan', 'trudy.val.m@gmail.com', '01365478261', '18', '1', '0', '0');
+";
+
+if ($conn->query($sql) === TRUE) {
+  echo "Table markers created";
+} else {
+  echo "Error found creating table " . $conn->error;
+}
+
+$conn->close();
+?>
