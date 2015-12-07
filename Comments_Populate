@@ -1,0 +1,34 @@
+<?php
+$conn = new mysqli(
+
+    "eu-cdbr-azure-west-c.cloudapp.net"
+    "befd2db9fe76ad"
+    "5a698004"
+    "WebApp_Coursework"
+);
+
+/*Establishes connection*/
+
+//$conn - newmysqli($servername, $username, $password, $dbname);
+/*Connection check*/
+if ($conn->connect_error) {
+  die("Connection has failed " . $conn->connect_error);
+}
+
+/*populate Comments table */
+
+$sql = "
+INSERT INTO Comments (comID, description, com_date, userID, adventID) VALUES ('C001', 'Amazing photos. I suppose you had a great time!', '2015-12-02 12-30-24', 'U001', 'AD01');
+INSERT INTO Comments (comID, description, com_date, userID, adventID) VALUES ('C002', 'The place looks awesome!! I should go there myself.', '2015-11-26 23-16-30', 'U001', 'AD03');
+INSERT INTO Comments (comID, description, com_date, userID, adventID) VALUES ('C003', 'I went there last summer. It’s a great pace to visit and I rocomend it to everybody!', '2015-12-09 16-03-59', 'U003', 'AD07');
+INSERT INTO Comments (comID, description, com_date, userID, adventID) VALUES ('C005', '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa.', '2015-12-06 09-52-12', 'U004', 'AD04');
+";
+
+if ($conn->query($sql) === TRUE) {
+  echo "Table markers created";
+} else {
+  echo "Error found creating table " . $conn->error;
+}
+
+$conn->close();
+?>
