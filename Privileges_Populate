@@ -1,0 +1,46 @@
+<?php
+$conn = new mysqli(
+
+    "eu-cdbr-azure-west-c.cloudapp.net"
+    "befd2db9fe76ad"
+    "5a698004"
+    "WebApp_Coursework"
+);
+
+/*Establishes connection*/
+
+//$conn - newmysqli($servername, $username, $password, $dbname);
+/*Connection check*/
+if ($conn->connect_error) {
+  die("Connection has failed " . $conn->connect_error);
+}
+/* sql to create table*/
+$sql = "
+INSERT INTO markers (privID, description, userID) VALUES ('PR01', 'User may view page', 'U004');
+INSERT INTO markers (privID, description, userID) VALUES ('PR02', 'User may comment on page', 'U004');
+INSERT INTO markers (privID, description, userID) VALUES ('PR03', 'User may vote on page', 'U004');
+INSERT INTO markers (privID, description, userID) VALUES ('PR04', 'User may create adventure page', 'U004');
+INSERT INTO markers (privID, description, userID) VALUES ('PR05', 'User may delete their adventure page', 'U004');
+INSERT INTO markers (privID, description, userID) VALUES ('PR06', 'User may delete any adventure page', 'U004');
+INSERT INTO markers (privID, description, userID) VALUES ('PR07', 'User may delete their comment', 'U004');
+INSERT INTO markers (privID, description, userID) VALUES ('PR08', 'User may delete any comment', 'U004');
+INSERT INTO markers (privID, description, userID) VALUES ('PR09', 'User may comment on adventure page', 'U004');
+INSERT INTO markers (privID, description, userID) VALUES ('PR10', 'User may delete image on their adventure page', 'U004');
+INSERT INTO markers (privID, description, userID) VALUES ('PR11', 'User may delete image on any adventure page', 'U004');
+INSERT INTO markers (privID, description, userID) VALUES ('PR12', 'User may delete comments on their adventure page', 'U004');
+INSERT INTO markers (privID, description, userID) VALUES ('PR13', 'User may delete comments on any adventure page ', 'U004');
+INSERT INTO markers (privID, description, userID) VALUES ('PR14', 'User may post images on their adventure page', 'U004');
+INSERT INTO markers (privID, description, userID) VALUES ('PR15', 'User may delete images on their adventure page', 'U004');
+INSERT INTO markers (privID, description, userID) VALUES ('PR16', 'User may delete images on any adventure page', 'U004');
+INSERT INTO markers (privID, description, userID) VALUES ('PR17', 'User may delete their vote', 'U004');
+INSERT INTO markers (privID, description, userID) VALUES ('PR18', 'User may delete any vote', 'U004');
+";
+
+if ($conn->query($sql) === TRUE) {
+  echo "Table markers created";
+} else {
+  echo "Error found creating table " . $conn->error;
+}
+
+$conn->close();
+?>
