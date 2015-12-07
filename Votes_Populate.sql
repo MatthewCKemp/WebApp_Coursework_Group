@@ -18,22 +18,22 @@ if ($conn->connect_error) {
 /* sql to create table*/
 
 $sql = "
-INSERT INTO votes (voteID, Type, userID) VALUES (V001, 'UP', U002);
-INSERT INTO votes (voteID, Type, userID) VALUES (V002, 'UP', U002);
-INSERT INTO votes (voteID, Type, userID) VALUES (V003, 'DOWN', U001);
-INSERT INTO votes (voteID, Type, userID) VALUES (V004, 'DOWN', U004);
-INSERT INTO votes (voteID, Type, userID) VALUES (V005, 'UP', U007);
-INSERT INTO votes (voteID, Type, userID) VALUES (V006, 'DOWN', U007);
-INSERT INTO votes (voteID, Type, userID) VALUES (V007, 'DOWN', U008);
-INSERT INTO votes (voteID, Type, userID) VALUES (V008, 'UP', U009);
-INSERT INTO votes (voteID, Type, userID) VALUES (V009, 'UP', U009);
-INSERT INTO votes (voteID, Type, userID) VALUES (V0010, 'UP', U005);
-INSERT INTO votes (voteID, Type, userID) VALUES (V0011, 'UP', U007);
-INSERT INTO votes (voteID, Type, userID) VALUES (V0012, 'DOWN', U007);
-INSERT INTO votes (voteID, Type, userID) VALUES (V0013, 'UP', U009);
-INSERT INTO votes (voteID, Type, userID) VALUES (V0014, 'UP', U001);
-INSERT INTO votes (voteID, Type, userID) VALUES (V0015, 'DOWN', U003);
-INSERT INTO votes (voteID, Type, userID) VALUES (V0016, 'UP', U001);
+INSERT INTO votes (voteID, Type, userID) VALUES ('V001', 'UP', 'U002');
+INSERT INTO votes (voteID, Type, userID) VALUES ('V002', 'UP', 'U002');
+INSERT INTO votes (voteID, Type, userID) VALUES ('V003', 'DOWN', 'U001');
+INSERT INTO votes (voteID, Type, userID) VALUES ('V004', 'DOWN', 'U004');
+INSERT INTO votes (voteID, Type, userID) VALUES ('V005', 'UP', 'U007');
+INSERT INTO votes (voteID, Type, userID) VALUES ('V006', 'DOWN', 'U007');
+INSERT INTO votes (voteID, Type, userID) VALUES ('V007', 'DOWN', 'U008');
+INSERT INTO votes (voteID, Type, userID) VALUES ('V008', 'UP', 'U009');
+INSERT INTO votes (voteID, Type, userID) VALUES ('V009', 'UP', 'U009');
+INSERT INTO votes (voteID, Type, userID) VALUES ('V010', 'UP', 'U005');
+INSERT INTO votes (voteID, Type, userID) VALUES ('V011', 'UP', 'U007');
+INSERT INTO votes (voteID, Type, userID) VALUES ('V012', 'DOWN', 'U007');
+INSERT INTO votes (voteID, Type, userID) VALUES ('V013', 'UP', 'U009');
+INSERT INTO votes (voteID, Type, userID) VALUES ('V014', 'UP', 'U001');
+INSERT INTO votes (voteID, Type, userID) VALUES ('V015', 'DOWN', 'U003');
+INSERT INTO votes (voteID, Type, userID) VALUES ('V016', 'UP', 'U001');
 ";
 
 
