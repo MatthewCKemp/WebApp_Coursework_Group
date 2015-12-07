@@ -1,0 +1,36 @@
+<?php
+$conn = new mysqli(
+
+    "Azure"
+    "1304963"
+    "1304963"
+    "Privilege"
+);
+
+/*Establishes connection*/
+
+//$conn - newmysqli($servername, $username, $password, $dbname);
+/*Connection check*/
+if ($conn->connect_error) {
+  die("Connection has failed " . $conn->connect_error);
+}
+
+/*Creates sql table*/
+
+$sql = "CREATE TABLE Privilege (
+id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+privID       CHAR ( 4 ) NOT NULL,
+Description  VARCHAR( 80 ) NOT NULL,
+userID       CHAR ( 4 ) NOT NULL,
+CONSTRAINT pkPrivilege PRIMARY KEY (userID)
+) ENGINE = MYISAM ;
+";
+
+if ($conn->query($sql) === TRUE) {
+  echo "Table markers created";
+} else {
+  echo "Error found creating table " . $conn->error;
+}
+
+$conn->close();
+?>
