@@ -1,0 +1,41 @@
+<?php
+$conn = new mysqli(
+
+    "Azure"
+    "1304963"
+    "1304963"
+    "Contributions"
+);
+
+/*Establishes connection*/
+
+//$conn - newmysqli($servername, $username, $password, $dbname);
+/*Connection check*/
+if ($conn->connect_error) {
+  die("Connection has failed " . $conn->connect_error);
+}
+
+/* sql to create the CONTRIBUTIONS table */
+
+$sql = "CREATE TABLE Contributions (
+id INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+contID 		  CHAR(4),
+cont_name 	VARCHAR(10),
+cont_date	  DATE ,
+data_type	  VARCHAR(40),
+userID 		  CHAR(4) NOT NULL,
+
+CONSTRAINT pk_contID PRIMARY KEY contID,
+CONSTRAINT fk_userID FOREIGN KEY (userID) REFERENCES Users (userID),
+
+) ENGINE = MYISAM ;
+";
+
+if ($conn->query($sql) === TRUE) {
+  echo "Table markers created";
+} else {
+  echo "Error found creating table " . $conn->error;
+}
+
+$conn->close();
+?>
