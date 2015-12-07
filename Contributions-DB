@@ -32,7 +32,7 @@ CONSTRAINT fk_userID FOREIGN KEY (userID) REFERENCES Users (userID),
 ";
 
 if ($conn->query($sql) === TRUE) {
-  echo "Table markers created";
+  echo "Table Contributions created";
 } else {
   echo "Error found creating table " . $conn->error;
 }
