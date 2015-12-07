@@ -1,0 +1,48 @@
+<?php
+$conn = new mysqli(
+
+    "eu-cdbr-azure-west-c.cloudapp.net"
+    "befd2db9fe76ad"
+    "5a698004"
+    "WebApp_Coursework"
+);
+
+/*Establishes connection*/
+
+//$conn - newmysqli($servername, $username, $password, $dbname);
+/*Connection check*/
+if ($conn->connect_error) {
+  die("Connection has failed " . $conn->connect_error);
+}
+
+/*populate Tags table */
+
+$sql = "
+INSERT INTO Tags (tagID, tag_description, userID) VALUES ('T001', 'Spain', 'U001');
+INSERT INTO Tags (tagID, tag_description, userID) VALUES ('T002', 'Scotland', 'U003');
+INSERT INTO Tags (tagID, tag_description, userID) VALUES ('T003', 'France', 'U003');
+INSERT INTO Tags (tagID, tag_description, userID) VALUES ('T004', 'Vietnam', 'U003');
+INSERT INTO Tags (tagID, tag_description, userID) VALUES ('T005', 'USA', 'U002');
+INSERT INTO Tags (tagID, tag_description, userID) VALUES ('T006', 'Czech Republic', 'U001');
+INSERT INTO Tags (tagID, tag_description, userID) VALUES ('T007', 'Germany', 'U004');
+INSERT INTO Tags (tagID, tag_description, userID) VALUES ('T008', 'Netherlands', 'U004');
+INSERT INTO Tags (tagID, tag_description, userID) VALUES ('T009', 'Israel', 'U004');
+INSERT INTO Tags (tagID, tag_description, userID) VALUES ('T010', 'Portugal', 'U005');
+INSERT INTO Tags (tagID, tag_description, userID) VALUES ('T011', 'China', 'U007');
+INSERT INTO Tags (tagID, tag_description, userID) VALUES ('T012', 'Skiing', 'U004');
+INSERT INTO Tags (tagID, tag_description, userID) VALUES ('T013', 'Caribbean', 'U006'
+INSERT INTO Tags (tagID, tag_description, userID) VALUES ('T014', 'Asia', 'U005');
+INSERT INTO Tags (tagID, tag_description, userID) VALUES ('T015', 'Europe', 'U007');
+INSERT INTO Tags (tagID, tag_description, userID) VALUES ('T016', 'North America', 'U009');
+INSERT INTO Tags (tagID, tag_description, userID) VALUES ('T017', 'Road Trip', 'U009');
+INSERT INTO Tags (tagID, tag_description, userID) VALUES ('T018', 'Party', 'U009');
+";
+
+if ($conn->query($sql) === TRUE) {
+  echo "Table markers created";
+} else {
+  echo "Error found creating table " . $conn->error;
+}
+
+$conn->close();
+?>
