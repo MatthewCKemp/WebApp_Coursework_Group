@@ -1,0 +1,40 @@
+<?php
+$conn = new mysqli(
+
+    "Azure"
+    "1304963"
+    "1304963"
+    "Adventure"
+);
+
+/*Establishes connection*/
+
+//$conn - newmysqli($servername, $username, $password, $dbname);
+/*Connection check*/
+if ($conn->connect_error) {
+  die("Connection has failed " . $conn->connect_error);
+}
+
+/* sql to create the ADVENTURE table */
+$sql = "CREATE TABLE Adventure (
+id INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+adventID       CHAR(4),
+advent_name    VARCHAR(60) NOT NULL ,
+advent_country VARCHAR(20) NOT NULL ,
+tagID          CHAR (4),
+
+CONSTRAINT pk_adventID PRIMERY KEY adventID,
+CONSTRAINT fk_tagID FOREIGN KEY (tagID) REFERENCES Tags (tagID)
+
+) ENGINE = MYISAM ;
+";
+
+
+if ($conn->query($sql) === TRUE) {
+  echo "Table markers created";
+} else {
+  echo "Error found creating table " . $conn->error;
+}
+
+$conn->close();
+?>
