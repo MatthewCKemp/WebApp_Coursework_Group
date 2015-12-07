@@ -1,0 +1,39 @@
+<?php
+$conn = new mysqli(
+
+    "eu-cdbr-azure-west-c.cloudapp.net"
+    "befd2db9fe76ad"
+    "5a698004"
+    "WebApp_Coursework"
+);
+
+/*Establishes connection*/
+
+//$conn - newmysqli($servername, $username, $password, $dbname);
+/*Connection check*/
+if ($conn->connect_error) {
+  die("Connection has failed " . $conn->connect_error);
+}
+
+/* populate Adventure table */
+
+$sql = "
+INSERT INTO Adventures (aventID, advent_name, advent_country, tagID, userID) VALUES ('AD01', 'A trip to Spain','Spain', 'T001', 'U001');
+INSERT INTO Adventures (aventID, advent_name, advent_country, tagID, userID) VALUES ('AD02', 'A few days in Glasgow','Glasgow', 'Scotland', 'T002', 'U001');
+INSERT INTO Adventures (aventID, advent_name, advent_country, tagID, userID) VALUES ('AD03', 'Stoneheaven','Scotland', 'UK','T005', 'U001');
+INSERT INTO Adventures (aventID, advent_name, advent_country, tagID, userID) VALUES ('AD04', 'Prague, Czech Republic', 'T006', 'U002');
+INSERT INTO Adventures (aventID, advent_name, advent_country, tagID, userID) VALUES ('AD05', 'Enjoy the romance', 'Paris, France', 'T008', 'U002');
+INSERT INTO Adventures (aventID, advent_name, advent_country, tagID, userID) VALUES ('AD06', 'More from France', 'Rouen, France', 'T003', 'U002');
+INSERT INTO Adventures (aventID, advent_name, advent_country, tagID, userID) VALUES ('AD07', 'The city that never Sleeps', 'New York, USA', 'T007', 'U003');
+INSERT INTO Adventures (aventID, advent_name, advent_country, tagID, userID) VALUES ('AD08', 'Adventure in Asia', 'Ho Chi Minh, Vietnam', 'T004', 'U003');
+INSERT INTO Adventures (aventID, advent_name, advent_country, tagID, userID) VALUES ('AD09', 'A visit to Jerusalem', 'Jerusalem, Israel', 'T009', 'U003');
+";
+
+if ($conn->query($sql) === TRUE) {
+  echo "Table markers created";
+} else {
+  echo "Error found creating table " . $conn->error;
+}
+
+$conn->close();
+?>
