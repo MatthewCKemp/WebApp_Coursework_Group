@@ -14,14 +14,15 @@ $conn = new mysqli(
 if ($conn->connect_error) {
   die("Connection has failed " . $conn->connect_error);
 }
-/* sql to create table*/
+/* sql to populate Privileges table*/
+
 $sql = "
-INSERT INTO markers (privID, description) VALUES ('PR01', 'Basic User');
-INSERT INTO markers (privID, description) VALUES ('PR02', 'Reader');
-INSERT INTO markers (privID, description) VALUES ('PR03', 'Author');
-INSERT INTO markers (privID, description) VALUES ('PR04', 'Admin');
-INSERT INTO markers (privID, description) VALUES ('PR05', 'Admin and reader');
-INSERT INTO markers (privID, description) VALUES ('PR06', 'Admin and author');
+INSERT INTO Privileges (privID, description) VALUES ('PR01', 'Basic User');
+INSERT INTO Privileges (privID, description) VALUES ('PR02', 'Reader');
+INSERT INTO Privileges (privID, description) VALUES ('PR03', 'Author');
+INSERT INTO Privileges (privID, description) VALUES ('PR04', 'Admin');
+INSERT INTO Privileges (privID, description) VALUES ('PR05', 'Admin and reader');
+INSERT INTO Privileges (privID, description) VALUES ('PR06', 'Admin and author');
 ";
 
 if ($conn->query($sql) === TRUE) {
