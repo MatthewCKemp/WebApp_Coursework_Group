@@ -34,7 +34,7 @@ CONSTRAINT fk_adventID FOREIGN KEY (adventID) REFERENCES Adventures (adventID)
 
 
 if ($conn->query($sql) === TRUE) {
-  echo "Table markers created";
+  echo "Table Comments created";
 } else {
   echo "Error found creating table " . $conn->error;
 }
