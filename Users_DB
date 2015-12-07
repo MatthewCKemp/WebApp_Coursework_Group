@@ -1,9 +1,9 @@
 <?php
 $conn = new mysqli(
 
-    "Azure"
-    "1304963"
-    "1304963"
+    "eu-cdbr-azure-west-c.cloudapp.net"
+    "befd2db9fe76ad"
+    "5a698004"
     "Users"
 );
 
