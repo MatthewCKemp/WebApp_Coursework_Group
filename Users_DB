@@ -23,10 +23,20 @@ userID  CHAR ( 4 ) NOT NULL,
 name    VARCHAR( 40 ) NOT NULL,
 country VARCHAR ( 30 ) NOT NULL,
 email   VARCHAR ( 40 ) NOT NULL,
-phone   INTEGER
-age     INTEGER
+phone   INT
+age     INT
 reader  BIT,
 author  BIT,
 admin   BIT,
 ) ENGINE = MYISAM ;
 ";
+
+if ($conn->query($sql) === TRUE) {
+  echo "Table markers created";
+} else {
+  echo "Error found creating table " . $conn->error;
+}
+
+$conn->close();
+?>
+
