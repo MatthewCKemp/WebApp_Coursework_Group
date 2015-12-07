@@ -25,9 +25,9 @@ com_date      DATETIME,
 userID        CHAR(4) NOT NULL,
 adventID      CHAR (4) NOT NULL,
 
-CONSTRAINT pk_comID PRIMERY KEY comID,
+CONSTRAINT pk_comID PRIMARY KEY comID,
 CONSTRAINT fk_userID FOREIGN KEY (user_ID) REFERENCES Users (userID),
-CONSTRAINT fk_adventID FOREIGN KEY (adventID) REFERENCES Adventure (adventID)
+CONSTRAINT fk_adventID FOREIGN KEY (adventID) REFERENCES Adventures (adventID)
 
 ) ENGINE = MYISAM ;
 ";
