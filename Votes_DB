@@ -4,7 +4,7 @@ $conn = new mysqli(
     "Azure"
     "1304963"
     "1304963"
-    "Vote"
+    "Votes"
 );
 
 /*Establishes connection*/
@@ -17,13 +17,13 @@ if ($conn->connect_error) {
 
 /* sql to create the VOTE table */
 
-$sql = "CREATE TABLE Vote (
+$sql = "CREATE TABLE Votes (
 id INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
 voteID   CHAR(4),
 type     VARCHAR(10),
 userID   CHAR(4) NOT NULL,
 
-CONSTRAINT pk_voteID PRIMERY KEY voteID,
+CONSTRAINT pk_voteID PRIMARY KEY voteID,
 CONSTRAINT fk_userID FOREIGN KEY (userID) REFERENCES Users (userID),
 
 ) ENGINE = MYISAM ;
