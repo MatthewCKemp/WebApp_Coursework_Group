@@ -1,0 +1,38 @@
+<?php
+$conn = new mysqli(
+
+    "Azure"
+    "1304963"
+    "1304963"
+    "Tags"
+);
+
+/*Establishes connection*/
+
+//$conn - newmysqli($servername, $username, $password, $dbname);
+/*Connection check*/
+if ($conn->connect_error) {
+  die("Connection has failed " . $conn->connect_error);
+}
+
+/* sql to create the Tags table*/
+
+$sql = "CREATE TABLE Tags (
+id INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+tagID             CHAR(4),
+tag_description   VARCHAR(60) NOT NULL ,
+userID CHAR(4)    NOT NULL,
+CONSTRAINT pk_tagID PRIMERY KEY tagID,
+CONSTRAINT fk_userID FOREIGN KEY (userID) REFERENCES Users (userID)
+) ENGINE = MYISAM ;
+";
+
+
+if ($conn->query($sql) === TRUE) {
+  echo "Table markers created";
+} else {
+  echo "Error found creating table " . $conn->error;
+}
+
+$conn->close();
+?>
