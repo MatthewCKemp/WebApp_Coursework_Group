@@ -1,0 +1,58 @@
+<?php
+$conn = new mysqli(
+
+    "eu-cdbr-azure-west-c.cloudapp.net"
+    "befd2db9fe76ad"
+    "5a698004"
+    "WebApp_Coursework"
+);
+
+/*Establishes connection*/
+
+//$conn - newmysqli($servername, $username, $password, $dbname);
+/*Connection check*/
+if ($conn->connect_error) {
+  die("Connection has failed " . $conn->connect_error);
+}
+
+/*populates Contributions table */
+
+$sql = "
+INSERT INTO Contributions (contID, cont_name, cont_date, data_type, userID) VALUES ('CN01', 'Stoneheaven', '2015-12-06', 'Image', 'U001',);
+INSERT INTO Contributions (contID, cont_name, cont_date, data_type, userID) VALUES ('CN02', 'Spain', '2015-12-02', 'Text', 'U001',);
+INSERT INTO Contributions (contID, cont_name, cont_date, data_type, userID) VALUES ('CN03', 'NewYorkPictures', '2015-12-08', 'Image', 'U003',);
+INSERT INTO Contributions (contID, cont_name, cont_date, data_type, userID) VALUES ('CN04', 'NewYorkInfo', '2015-12-08', 'Text', 'U003',);
+INSERT INTO Contributions (contID, cont_name, cont_date, data_type, userID) VALUES ('CN05', 'Vietnam', '2015-11-28', 'Image', 'U003',);
+INSERT INTO Contributions (contID, cont_name, cont_date, data_type, userID) VALUES ('CN06', 'Vietnam2', '2015-11-28', 'Image', 'U003',);
+INSERT INTO Contributions (contID, cont_name, cont_date, data_type, userID) VALUES ('CN07', 'StoneheavenInfo', '2015-11-06', 'Text', 'U001',);
+INSERT INTO Contributions (contID, cont_name, cont_date, data_type, userID) VALUES ('CN08', 'MoreSpain', '2015-11-02', 'Image', 'U001',);
+INSERT INTO Contributions (contID, cont_name, cont_date, data_type, userID) VALUES ('CN09', 'EvenMoreSpain', '2015-11-02', 'Image', 'U001',);
+INSERT INTO Contributions (contID, cont_name, cont_date, data_type, userID) VALUES ('CN10', 'Israel1', '2015-12-14', 'Image', 'U003',);
+INSERT INTO Contributions (contID, cont_name, cont_date, data_type, userID) VALUES ('CN11', 'Israel2', '2015-12-14', 'Image', 'U003',);
+INSERT INTO Contributions (contID, cont_name, cont_date, data_type, userID) VALUES ('CN12', 'Israel3', '2015-12-14', 'Text', 'U003',);
+INSERT INTO Contributions (contID, cont_name, cont_date, data_type, userID) VALUES ('CN13', 'Israel4', '2015-12-14', 'Image', 'U003',);
+INSERT INTO Contributions (contID, cont_name, cont_date, data_type, userID) VALUES ('CN14', 'ExtraVietnam', '2015-11-28', 'Image', 'U003',);
+INSERT INTO Contributions (contID, cont_name, cont_date, data_type, userID) VALUES ('CN15', 'StoneheavenMore', '2015-12-06', 'Text', 'U001',);
+INSERT INTO Contributions (contID, cont_name, cont_date, data_type, userID) VALUES ('CN16', 'FrancePics', '2015-07-12', 'Image', 'U002',);
+INSERT INTO Contributions (contID, cont_name, cont_date, data_type, userID) VALUES ('CN17', 'France', '2015-07-12', 'Text', 'U002',);
+INSERT INTO Contributions (contID, cont_name, cont_date, data_type, userID) VALUES ('CN18', 'Rouen', '2015-07-12', 'Image', 'U002',);
+INSERT INTO Contributions (contID, cont_name, cont_date, data_type, userID) VALUES ('CN19', 'Paris', '2015-07-12', 'Image', 'U002',);
+INSERT INTO Contributions (contID, cont_name, cont_date, data_type, userID) VALUES ('CN20', 'Prague', '2015-07-12', 'Image', 'U002',);
+INSERT INTO Contributions (contID, cont_name, cont_date, data_type, userID) VALUES ('CN21', 'ExtraPrague', '2015-11-02', 'Image', 'U002',);
+INSERT INTO Contributions (contID, cont_name, cont_date, data_type, userID) VALUES ('CN22', 'SoMuch_CR', '2015-11-02', 'Image', 'U002',);
+INSERT INTO Contributions (contID, cont_name, cont_date, data_type, userID) VALUES ('CN23', 'RouenInfo', '2015-07-12', 'Text', 'U002',);
+INSERT INTO Contributions (contID, cont_name, cont_date, data_type, userID) VALUES ('CN24', 'Paris', '2015-07-12', 'Text', 'U002',);
+INSERT INTO Contributions (contID, cont_name, cont_date, data_type, userID) VALUES ('CN25', 'Glasgow', '2015-11-30', 'Image', 'U001',);
+INSERT INTO Contributions (contID, cont_name, cont_date, data_type, userID) VALUES ('CN26', 'Glasgow2', '2015-11-30', 'Text', 'U001',);
+INSERT INTO Contributions (contID, cont_name, cont_date, data_type, userID) VALUES ('CN27', 'Glasgow3', '2015-11-30', 'Image', 'U001',);
+INSERT INTO Contributions (contID, cont_name, cont_date, data_type, userID) VALUES ('CN28', 'EvenMoreSpain', '2015-11-02', 'Image', 'U001',);
+";
+
+if ($conn->query($sql) === TRUE) {
+  echo "Table markers created";
+} else {
+  echo "Error found creating table " . $conn->error;
+}
+
+$conn->close();
+?>
