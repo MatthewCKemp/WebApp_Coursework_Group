@@ -4,7 +4,7 @@ $conn = new mysqli(
     "Azure"
     "1304963"
     "1304963"
-    "User"
+    "Users"
 );
 
 /*Establishes connection*/
@@ -17,7 +17,7 @@ if ($conn->connect_error) {
 
 /*Creates sql table*/
 
-$sql = "CREATE TABLE User (
+$sql = "CREATE TABLE Users (
 id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 userID  CHAR ( 4 ) NOT NULL,
 name    VARCHAR( 40 ) NOT NULL,
@@ -28,7 +28,9 @@ age     INT
 reader  BIT,
 author  BIT,
 admin   BIT,
+
 CONSTRAINT pkUser PRIMARY KEY (userID)
+
 ) ENGINE = MYISAM ;
 ";
 
