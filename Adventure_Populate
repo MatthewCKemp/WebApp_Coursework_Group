@@ -30,7 +30,7 @@ INSERT INTO Adventures (aventID, advent_name, advent_country, tagID, userID) VAL
 ";
 
 if ($conn->query($sql) === TRUE) {
-  echo "Table markers created";
+  echo "Table Adventures created";
 } else {
   echo "Error found creating table " . $conn->error;
 }
