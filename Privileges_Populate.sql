@@ -26,7 +26,7 @@ INSERT INTO Privileges (privID, description) VALUES ('PR06', 'Admin and author')
 ";
 
 if ($conn->query($sql) === TRUE) {
-  echo "Table markers created";
+  echo "Table Privileges created";
 } else {
   echo "Error found creating table " . $conn->error;
 }
