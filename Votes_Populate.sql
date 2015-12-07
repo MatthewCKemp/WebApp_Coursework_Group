@@ -38,7 +38,7 @@ INSERT INTO Votes (voteID, Type, userID) VALUES ('V016', 'UP', 'U001');
 
 
 if ($conn->query($sql) === TRUE) {
-  echo "Table markers created";
+  echo "Table Votes created";
 } else {
   echo "Error found creating table " . $conn->error;
 }
