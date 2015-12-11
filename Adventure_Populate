@@ -21,7 +21,7 @@ $sql = "
 INSERT INTO Adventures (aventID, advent_name, advent_country, tagID, userID) VALUES ('AD01', 'A trip to Spain','Spain', 'T001', 'U001');
 INSERT INTO Adventures (aventID, advent_name, advent_country, tagID, userID) VALUES ('AD02', 'A few days in Glasgow','Glasgow', 'Scotland', 'T002', 'U001');
 INSERT INTO Adventures (aventID, advent_name, advent_country, tagID, userID) VALUES ('AD03', 'Stoneheaven','Scotland', 'UK','T002', 'U001');
-INSERT INTO Adventures (aventID, advent_name, advent_country, tagID, userID) VALUES ('AD04', 'Prague, Czech Republic', 'T006', 'U002');
+INSERT INTO Adventures (aventID, advent_name, advent_country, tagID, userID) VALUES ('AD04', 'Prague', 'Prague, Czech Republic', 'T006', 'U002');
 INSERT INTO Adventures (aventID, advent_name, advent_country, tagID, userID) VALUES ('AD05', 'Enjoy the romance', 'Paris, France', 'T003', 'U002');
 INSERT INTO Adventures (aventID, advent_name, advent_country, tagID, userID) VALUES ('AD06', 'More from France', 'Rouen, France', 'T003', 'U002');
 INSERT INTO Adventures (aventID, advent_name, advent_country, tagID, userID) VALUES ('AD07', 'The city that never Sleeps', 'New York, USA', 'T005', 'U003');
