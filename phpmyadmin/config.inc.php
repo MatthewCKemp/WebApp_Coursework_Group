@@ -14,7 +14,7 @@
  * This is needed for cookie based authentication to encrypt password in
  * cookie
  */
-$cfg['j57dbt408tclon4'] = ''; /* YOU MUST FILL IN THIS FOR COOKIE AUTH! */
+$cfg['befd2db9fe76ad'] = ''; /* YOU MUST FILL IN THIS FOR COOKIE AUTH! */
 
 /**
  * Servers configuration
@@ -28,7 +28,7 @@ $i++;
 /* Authentication type */
 $cfg['Servers'][$i]['auth_type'] = 'cookie';
 /* Server parameters */
-$cfg['Servers'][$i]['host'] = 'eu-cdbr-azure-north-d.cloudapp.net';
+$cfg['Servers'][$i]['host'] = 'eu-cdbr-azure-west-c.cloudapp.net';
 $cfg['Servers'][$i]['connect_type'] = 'tcp';
 $cfg['Servers'][$i]['compress'] = false;
 $cfg['Servers'][$i]['AllowNoPassword'] = false;
