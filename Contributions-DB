@@ -4,7 +4,7 @@ $conn = new mysqli(
     "eu-cdbr-azure-west-c.cloudapp.net"
     "befd2db9fe76ad"
     "5a698004"
-    "Contributions"
+    "WebApp_Coursework"
 );
 
 /*Establishes connection*/
@@ -32,7 +32,7 @@ CONSTRAINT fk_userID FOREIGN KEY (userID) REFERENCES Users (userID),
 ";
 
 if ($conn->query($sql) === TRUE) {
-  echo "Table markers created";
+  echo "Table Contributions created";
 } else {
   echo "Error found creating table " . $conn->error;
 }

@@ -4,7 +4,7 @@ $conn = new mysqli(
     "eu-cdbr-azure-west-c.cloudapp.net"
     "befd2db9fe76ad"
     "5a698004"
-    "Comments"
+    "WebApp_Coursework"
 );
 
 /*Establishes connection*/
@@ -34,7 +34,7 @@ CONSTRAINT fk_adventID FOREIGN KEY (adventID) REFERENCES Adventures (adventID)
 
 
 if ($conn->query($sql) === TRUE) {
-  echo "Table markers created";
+  echo "Table Comments created";
 } else {
   echo "Error found creating table " . $conn->error;
 }

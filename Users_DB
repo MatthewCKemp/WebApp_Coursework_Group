@@ -37,7 +37,7 @@ CONSTRAINT fk_privID FOREIGN KEY (privID) REFERENCES Privileges (privID),
 ";
 
 if ($conn->query($sql) === TRUE) {
-  echo "Table markers created";
+  echo "Table Users created";
 } else {
   echo "Error found creating table " . $conn->error;
 }

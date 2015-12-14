@@ -23,7 +23,7 @@ imageID 	CHAR(4),
 image		IMAGE,
 userID 		CHAR(4) NOT NULL,
 
-CONSTRAINT pk_imageID PRIMaRY KEY imageID,
+CONSTRAINT pk_imageID PRIMARY KEY imageID,
 CONSTRAINT fk_userID FOREIGN KEY (userID) REFERENCES Users (userID),
 ) ENGINE = MYISAM ;
 ";

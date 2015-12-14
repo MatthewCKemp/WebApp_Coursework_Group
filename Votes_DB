@@ -4,7 +4,7 @@ $conn = new mysqli(
     "eu-cdbr-azure-west-c.cloudapp.net"
     "befd2db9fe76ad"
     "5a698004"
-    "Votes"
+    "WebApp_Coursework"
 );
 
 /*Establishes connection*/
@@ -20,7 +20,7 @@ if ($conn->connect_error) {
 $sql = "CREATE TABLE Votes (
 id INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
 voteID   CHAR(4),
-type     VARCHAR(10),
+Type     VARCHAR(10),
 userID   CHAR(4) NOT NULL,
 
 CONSTRAINT pk_voteID PRIMARY KEY voteID,
@@ -31,7 +31,7 @@ CONSTRAINT fk_userID FOREIGN KEY (userID) REFERENCES Users (userID),
 
 
 if ($conn->query($sql) === TRUE) {
-  echo "Table markers created";
+  echo "Table Votes created";
 } else {
   echo "Error found creating table " . $conn->error;
 }
