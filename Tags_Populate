@@ -39,7 +39,7 @@ INSERT INTO Tags (tagID, tag_description, userID) VALUES ('T018', 'Party', 'U009
 ";
 
 if ($conn->query($sql) === TRUE) {
-  echo "Table markers created";
+  echo "Table Tags created";
 } else {
   echo "Error found creating table " . $conn->error;
 }

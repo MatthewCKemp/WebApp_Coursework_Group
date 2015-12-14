@@ -28,7 +28,7 @@ CONSTRAINT pkPrivilege PRIMARY KEY (privID)
 ";
 
 if ($conn->query($sql) === TRUE) {
-  echo "Table markers created";
+  echo "Table Privileges created";
 } else {
   echo "Error found creating table " . $conn->error;
 }

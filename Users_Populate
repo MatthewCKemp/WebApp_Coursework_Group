@@ -30,7 +30,7 @@ INSERT INTO Users (userID, name, country, email, phone, age, reader, author, adm
 ";
 
 if ($conn->query($sql) === TRUE) {
-  echo "Table markers created";
+  echo "Table Users created";
 } else {
   echo "Error found creating table " . $conn->error;
 }
