@@ -20,11 +20,11 @@ $conn = new mysqli(
 
 $queryAdventure = "SELECT * FROM adventure ";
 $result = $db->query($queryAdventure);
-if (!$result) {
+if (!$resultAdventure) {
     die('Nothing in result: ');
 }
 
-echo $queryAdventure;
+echo $resultAdventure;
 
 $result->close();
 $db->close();
