@@ -23,7 +23,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$query = "SELECT * FROM adventure WHERE 1";
+$query = "SELECT * FROM adventure WHERE advent_name = Scotland";
 $result = $db->query($query);
 if (!$result) {
     die('Nothing in result: ');
@@ -43,11 +43,8 @@ while ($row = $result->fetch_array()){
     // ADD TO XML DOCUMENT NODE
     $node = $dom->createElement("adventure");
     $newnode = $parnode->appendChild($node);
-    $newnode->setAttribute("adventID",$row['adventID']);
     $newnode->setAttribute("advent_name", $row['advent_name']);
-    $newnode->setAttribute("advent_country", $row['advent_country']);
-    $newnode->setAttribute("tagID", $row['tagID']);
-    $newnode->setAttribute("userID", $row['userID']);
+
 }
 
 $result->close();
