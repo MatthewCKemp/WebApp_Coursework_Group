@@ -19,47 +19,44 @@
     <!-- Custom styles for this template -->
     <link href="starter-template.css" rel="stylesheet">
 
-    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+    <script src="../../assets/js/ie-emulation-modes-warning.js">
+
+      function downloadUrl(url,callback) {
+      var request = window.ActiveXObject ?
+      new ActiveXObject('Microsoft.XMLHTTP') :
+      new XMLHttpRequest;
+
+      downloadUrl("locations.php", function(data) {
+
+      var xml = data.responseXML;
+      var markers = xml.documentElement.getElementsByTagName("marker");
+
+      for (var i = 0; i < adventure.length; i++) {
+      var point = new google.maps.LatLng(
+      parseFloat(adventure[i].getAttribute("adventID")),
+      parseFloat(adventure[i].getAttribute("advent_country")));
+
+      var adventure = new google.maps.adventure({
+      map: map,
+      position: point
+      });
+      }};
 
 
 
+      request.onreadystatechange = function() {
+      if (request.readyState == 4) {
+      callback(request, request.status);
+      }
+      };
+
+      request.open('GET', url, true);
+      request.send(null);
+      }
+    </script>
   </head>
 
   <body>
-
-  function downloadUrl(url,callback) {
-  var request = window.ActiveXObject ?
-  new ActiveXObject('Microsoft.XMLHTTP') :
-  new XMLHttpRequest;
-
-  downloadUrl("locations.php", function(data) {
-
-  var xml = data.responseXML;
-  var markers = xml.documentElement.getElementsByTagName("marker");
-
-  for (var i = 0; i < adventure.length; i++) {
-  var point = new google.maps.LatLng(
-  parseFloat(adventure[i].getAttribute("adventID")),
-  parseFloat(adventure[i].getAttribute("advent_country")));
-
-  var adventure = new google.maps.adventure({
-  map: map,
-  position: point
-  });
-  }};
-
-
-
-  request.onreadystatechange = function() {
-  if (request.readyState == 4) {
-  callback(request, request.status);
-  }
-  };
-
-  request.open('GET', url, true);
-  request.send(null);
-  }
-
 
 
   <nav class="navbar navbar-inverse navbar-fixed-top">
