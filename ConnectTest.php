@@ -10,19 +10,6 @@ if ($db->connect_errno) {
     die ('Connection Failed :'.$db->connect_error );
 }
 
-$conn = new mysqli(
-    "eu-cdbr-azure-west-c.cloudapp.net",
-    "befd2db9fe76ad",
-    "5a698004",
-    "WebApp_Coursework" );
-
-// Create connection
-//$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
 // sql to create table
 $sql = "
 INSERT INTO markers (name, address, lat, lng, type) VALUES ('Pan Africa Market', '1521 1st Ave, Seattle, WA', 47.608941, -122.340145, 'restaurant');
