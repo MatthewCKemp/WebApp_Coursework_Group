@@ -19,7 +19,7 @@ $conn = new mysqli(
 
 
 $queryAdventure = "SELECT * FROM adventure ";
-$result = $db->query($queryAdventure);
+$resultAdventure = $db->query($queryAdventure);
 if (!$resultAdventure) {
     die('Nothing in result: ');
 }
