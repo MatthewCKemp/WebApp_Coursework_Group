@@ -23,7 +23,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$query = "SELECT * FROM Adventures";
+$query = "SELECT * FROM Adventures WHERE 1";
 $result = $db->query($query);
 if (!$result) {
     die('Nothing in result: ');
