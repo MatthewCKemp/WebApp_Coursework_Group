@@ -18,11 +18,13 @@ $conn = new mysqli(
     "WebApp_Coursework" );
 
 
-$query = "SELECT * FROM adventure WHERE 1";
-$result = $db->query($query);
+$queryAdventure = "SELECT * FROM adventure ";
+$result = $db->query($queryAdventure);
 if (!$result) {
     die('Nothing in result: ');
 }
+
+echo $queryAdventure;
 
 $result->close();
 $db->close();
