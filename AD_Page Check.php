@@ -29,7 +29,7 @@
       downloadUrl("locations.php", function(data) {
 
       var xml = data.responseXML;
-      var markers = xml.documentElement.getElementsByTagName("marker");
+      var adventure = xml.documentElement.getElementsByTagName("adventure");
 
       for (var i = 0; i < adventure.length; i++) {
       var point = new google.maps.LatLng(
