@@ -11,7 +11,7 @@ if($db->connect_errno){
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql_query = "SELECT * FROM adventure WHERE adventID LIKE '%0%'";
+$sql_query = "SELECT * FROM adventure";
 // execute the SQL query
 $result = $db->query($sql_query);
 
@@ -25,7 +25,7 @@ while($row = $result->fetch_array()){
 // use fetch_array() to return an associative array
 while($row = $result->fetch_array()){
     // print out fields from row of data
-    echo "<p>” . $row[adventID] . “</p>";
+    echo "<p>” . $row ['adventID'] . “</p>";
 }
 
 $result->close();
