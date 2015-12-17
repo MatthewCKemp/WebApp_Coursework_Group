@@ -23,7 +23,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$query = "SELECT adventID FROM adventure WHERE advent_name = Scotland";
+$query = "SELECT * FROM adventure WHERE 1";
 $result = $db->query($query);
 if (!$result) {
     die('Nothing in result: ');
@@ -54,7 +54,5 @@ $result->close();
 $db->close();
 
 echo $dom->saveXML();
-echo $query();
 
 ?>
-
