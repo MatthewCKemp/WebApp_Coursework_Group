@@ -1,40 +1,5 @@
 <!DOCTYPE html>
 
-function downloadUrl(url,callback) {
-var request = window.ActiveXObject ?
-new ActiveXObject('Microsoft.XMLHTTP') :
-new XMLHttpRequest;
-
-downloadUrl("locations.php", function(data) {
-
-var xml = data.responseXML;
-var markers = xml.documentElement.getElementsByTagName("marker");
-
-for (var i = 0; i < adventure.length; i++) {
-    var point = new google.maps.LatLng(
-        parseFloat(adventure[i].getAttribute("adventID")),
-        parseFloat(adventure[i].getAttribute("advent_country")));
-
-        var adventure = new google.maps.adventure({
-map: map,
-        position: point
-        });
-}};
-
-
-
-request.onreadystatechange = function() {
-if (request.readyState == 4) {
-callback(request, request.status);
-}
-};
-
-request.open('GET', url, true);
-request.send(null);
-}
-
-
-
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -62,7 +27,42 @@ request.send(null);
 
   <body>
 
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+  function downloadUrl(url,callback) {
+  var request = window.ActiveXObject ?
+  new ActiveXObject('Microsoft.XMLHTTP') :
+  new XMLHttpRequest;
+
+  downloadUrl("locations.php", function(data) {
+
+  var xml = data.responseXML;
+  var markers = xml.documentElement.getElementsByTagName("marker");
+
+  for (var i = 0; i < adventure.length; i++) {
+  var point = new google.maps.LatLng(
+  parseFloat(adventure[i].getAttribute("adventID")),
+  parseFloat(adventure[i].getAttribute("advent_country")));
+
+  var adventure = new google.maps.adventure({
+  map: map,
+  position: point
+  });
+  }};
+
+
+
+  request.onreadystatechange = function() {
+  if (request.readyState == 4) {
+  callback(request, request.status);
+  }
+  };
+
+  request.open('GET', url, true);
+  request.send(null);
+  }
+
+
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
