@@ -11,10 +11,10 @@ if ($db->connect_errno) {
 }
 
 $conn = new mysqli(
-    "host",
-    "user",
-    "password",
-    "database_name" );
+    "eu-cdbr-azure-west-c.cloudapp.net",
+    "befd2db9fe76ad",
+    "5a698004",
+    "WebApp_Coursework" );
 
 // Create connection
 //$conn = new mysqli($servername, $username, $password, $dbname);
