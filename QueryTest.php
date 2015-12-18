@@ -17,11 +17,10 @@ $result = $db->query($sql_query);
 
 // iterate over $result object one $row at a time
 // use fetch_array() to return an associative array
-while($row = $result->fetch_array()){
-    // print out fields from row of data
-    echo $row ;
-}
-
+if (mysql_num_rows($result) > 0) {
+    while ($row = mysql_fetch_assoc($result)) {
+        print_r($row);
+    }
 $result->close();
 // close connection to database
 $db->close();
