@@ -10,7 +10,7 @@ $db = new mysqli(
 if($db->connect_errno){
     die("Connection failed: " . $conn->connect_error);
 }
-mysql_select_db($db)
+mysql_select_db('WebApp_Coursework')
     or die("Unable to connect to database: " . mysql_error());
     
 $sql_query = "SELECT * FROM adventure";
