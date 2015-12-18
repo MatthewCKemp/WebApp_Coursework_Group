@@ -10,17 +10,28 @@ $db = new mysqli(
 if($db->connect_errno){
     die("Connection failed: " . $conn->connect_error);
 }
-
-$sql_query = "SELECT adventID FROM adventure";
+mysql_select_db($db)
+    or die("Unable to connect to database: " . mysql_error());
+    
+$sql_query = "SELECT * FROM adventure";
 // execute the SQL query
-$result = $db->query($sql_query);
+$result = mysql_query($query);
+
+if(!$result) die ("Could not query: " . mysql_error());
+$rows = mysql_num_rows($result);
+
+for($j = 0; $j < $rows; ++$j)
+{
+    echo 'dirijabyl: ' . mysql_result($result, $j, 'adventID') . '</br>';
+   
+}
 
 // iterate over $result object one $row at a time
 // use fetch_array() to return an associative array
-if (mysql_num_rows($result) > 0) {
-    while ($row = mysql_fetch_assoc($result)) {
-        print_r($row);
-    }
+//while($row = $result->fetch_array()){
+  //  // print out fields from row of data
+    //echo $row ;
+//}
 $result->close();
 // close connection to database
 $db->close();
