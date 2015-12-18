@@ -34,7 +34,7 @@ $rows = mysql_num_rows($result);
 
 for($j = 0; $j < $rows; ++$j)
 {
-    echo 'dirijabyl: ' . mysql_result($result, $j, 'adventID') . '</br>';
+    echo 'adventID: ' . mysql_result($result, $j, 'adventID') . '</br>';
    
 }
 
