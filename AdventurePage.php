@@ -32,17 +32,7 @@
 			mysql_select_db($db_database)
 	    	or die("Unable to connect to database: " . mysql_error());
 	    
-			$query = "SELECT * FROM adventure";
-			// execute the SQL query
-			$result = mysql_query($query);
-			if(!$result) die ("Could not query: " . mysql_error());
-			$rows = mysql_num_rows($result);
-			for($j = 0; $j < $rows; ++$j)
-			{
-			    echo 'adventID: ' . mysql_result($result, $j, 'adventID') . '</br>';
-			   
-			}
-    </script>
+   </script>			
   </head>
 
   <body>
@@ -53,8 +43,19 @@
           <li><a href = "http://webappcw.azurewebsites.net/AuthorPage.php"> Author Page </a></li>
           <li><a href = "http://webappcw.azurewebsites.net/QueryTest.php"> Hyperlink - QT - </a></li>
       </div>
+      <div>
+      	$query = "SELECT * FROM adventure";
+		// execute the SQL query
+		$result = mysql_query($query);
+			if(!$result) die ("Could not query: " . mysql_error());
+			$rows = mysql_num_rows($result);
+			for($j = 0; $j < $rows; ++$j)
+		{
+		 	echo 'adventID: ' . mysql_result($result, $j, 'adventID') . '</br>';
+			   
+		}
     
-
+	</div>
     <div class="container">
 
       <div class="starter-template">
