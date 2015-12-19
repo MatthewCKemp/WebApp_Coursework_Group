@@ -48,3 +48,4 @@ $result->close();
 // close connection to database
 $db->close();
 
+ <h1>Adventure Page</h1>
