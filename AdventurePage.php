@@ -57,6 +57,8 @@
 		 	echo 'adventID: ' . mysql_result($result, $j, 'adventID') . '</br>';
 			echo </div>   
 		}
+		$result->close();
+		$db->close();
     
 	</div>
     <div class="container">
