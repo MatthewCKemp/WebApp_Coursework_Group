@@ -51,8 +51,9 @@
 			$rows = mysql_num_rows($result);
 			for($j = 0; $j < $rows; ++$j)
 		{
+		 	echo <div>
 		 	echo 'adventID: ' . mysql_result($result, $j, 'adventID') . '</br>';
-			   
+			echo </div>   
 		}
     
 	</div>
