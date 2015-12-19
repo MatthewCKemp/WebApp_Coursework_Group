@@ -32,21 +32,7 @@
 			mysql_select_db($db_database)
 	    	or die("Unable to connect to database: " . mysql_error());
 	    	
-	
-	    
-   </script>			
-  </head>
-
-  <body>
-
-   
-      <div class="container">
-         <li class="active"><a href = "http://webappcw.azurewebsites.net/HomePage.html"> Home Page </a></li>
-          <li><a href = "http://webappcw.azurewebsites.net/AuthorPage.php"> Author Page </a></li>
-          <li><a href = "http://webappcw.azurewebsites.net/QueryTest.php"> Hyperlink - QT - </a></li>
-      </div>
-      <div>
-      		$query = "SELECT * FROM adventure";
+	$query = "SELECT * FROM adventure";
 		// execute the SQL query
 		$result = mysql_query($query);
 			if(!$result) die ("Could not query: " . mysql_error());
@@ -60,6 +46,20 @@
 		$result->close();
 		$db->close();
     
+	    
+   </script>			
+  </head>
+
+  <body>
+
+   
+      <div class="container">
+         <li class="active"><a href = "http://webappcw.azurewebsites.net/HomePage.html"> Home Page </a></li>
+          <li><a href = "http://webappcw.azurewebsites.net/AuthorPage.php"> Author Page </a></li>
+          <li><a href = "http://webappcw.azurewebsites.net/QueryTest.php"> Hyperlink - QT - </a></li>
+      </div>
+      <div>
+      		
 	</div>
     <div class="container">
 
