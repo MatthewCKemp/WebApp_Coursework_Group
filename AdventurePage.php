@@ -46,7 +46,6 @@
           <li><a href = "http://webappcw.azurewebsites.net/QueryTest.php"> Hyperlink - QT - </a></li>
       </div>
       <div>
-      	<script>
       		$query = "SELECT * FROM adventure";
 		// execute the SQL query
 		$result = mysql_query($query);
@@ -58,7 +57,6 @@
 		 	echo 'adventID: ' . mysql_result($result, $j, 'adventID') . '</br>';
 			echo </div>   
 		}
-	</script>
     
 	</div>
     <div class="container">
