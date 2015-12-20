@@ -46,6 +46,7 @@ $query = "SELECT * FROM users";
 $result = mysql_query($query);
 if(!$result) die ("Could not query: " . mysql_error());
 $rows = mysql_num_rows($result);
+echo 'asdf '
 for($j = 0; $j < $rows; ++$j)
 {
     echo 'userID: ' . mysql_result($result, $j, 'userID') . '</br>';
