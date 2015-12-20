@@ -48,7 +48,9 @@ if(!$result) die ("Could not query: " . mysql_error());
 $rows = mysql_num_rows($result);
 for($j = 0; $j < $rows; ++$j)
 {
-    echo 'adventID: ' . mysql_result($result, $j, 'userID') . '</br>';
+    echo 'author: ' . mysql_result($result, $j, 'name') . '</br>';
+    echo 'Country: ' . mysql_result($result, $j, 'country') . '</br>';
+    echo 'email: ' . mysql_result($result, $j, 'email') . '</br>';
    
 }
 ?>
