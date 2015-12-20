@@ -1,7 +1,5 @@
 
 
-<!DOCTYPE html>
-
 $db_database = 'WebApp_Coursework';
 $db_hostname = 'eu-cdbr-azure-west-c.cloudapp.net';
 $db_username = 'befd2db9fe76ad';
@@ -71,4 +69,3 @@ for($j = 0; $j < $rows; ++$j)
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
-</html>
