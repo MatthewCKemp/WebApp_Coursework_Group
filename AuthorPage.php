@@ -48,7 +48,7 @@ if(!$result) die ("Could not query: " . mysql_error());
 $rows = mysql_num_rows($result);
 for($j = 0; $j < $rows; ++$j)
 {
-    echo 'User: ' . mysql_result($result, $j, 'name', 'country', 'email','phone') . '</br>';
+    echo 'User: ' . mysql_result($result, $j, 'name') . '</br>';
    
 }
 
