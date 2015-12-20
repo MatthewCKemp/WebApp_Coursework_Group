@@ -51,7 +51,6 @@ for($j = 0; $j < $rows; ++$j)
     echo 'author: ' . mysql_result($result, $j, 'name') . '</br>';
     echo 'Country: ' . mysql_result($result, $j, 'country') . '</br>';
     echo 'email: ' . mysql_result($result, $j, 'email') . '</br>';
-    echo '  ';
    
 }
 ?>
