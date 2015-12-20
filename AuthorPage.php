@@ -1,25 +1,4 @@
 
-$db_database = 'WebApp_Coursework';
-$db_hostname = 'eu-cdbr-azure-west-c.cloudapp.net';
-$db_username = 'befd2db9fe76ad';
-$db_password = '5a698004';
-$db_server = mysql_connect($db_hostname, $db_username, $db_password);
-if(!$db_server) die("Unable to connect to MYSQL: ". mysql_error());
-mysql_select_db($db_database)
-    or die("Unable to connect to database: " . mysql_error());
-    
-$query = "SELECT * FROM adventure";
-// execute the SQL query
-$result = mysql_query($query);
-if(!$result) die ("Could not query: " . mysql_error());
-$rows = mysql_num_rows($result);
-for($j = 0; $j < $rows; ++$j)
-{
-    echo 'adventID: ' . mysql_result($result, $j, 'adventID') . '</br>';
-   
-}
-
-
 
 <html lang="en">
   <head>
@@ -52,7 +31,28 @@ for($j = 0; $j < $rows; ++$j)
           <li><a href = "http://webappcw.azurewebsites.net/AdventurePage.php"> Adventure Page </a></li>
           <li><a href = "http://webappcw.azurewebsites.net/QueryTest.php"> Hyperlink - QT - </a></li>
       </div>
+    	<?php
+$db_database = 'WebApp_Coursework';
+$db_hostname = 'eu-cdbr-azure-west-c.cloudapp.net';
+$db_username = 'befd2db9fe76ad';
+$db_password = '5a698004';
+$db_server = mysql_connect($db_hostname, $db_username, $db_password);
+if(!$db_server) die("Unable to connect to MYSQL: ". mysql_error());
+mysql_select_db($db_database)
+    or die("Unable to connect to database: " . mysql_error());
     
+$query = "SELECT * FROM adventure";
+// execute the SQL query
+$result = mysql_query($query);
+if(!$result) die ("Could not query: " . mysql_error());
+$rows = mysql_num_rows($result);
+for($j = 0; $j < $rows; ++$j)
+{
+    echo 'adventID: ' . mysql_result($result, $j, 'adventID') . '</br>';
+   
+}
+
+?>
 
     <div class="container">
 
