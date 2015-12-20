@@ -32,7 +32,6 @@
           <li><a href = "http://webappcw.azurewebsites.net/QueryTest.php"> Hyperlink - QT - </a></li>
       </div>
     	<?php
-<script>
 $db_database = 'WebApp_Coursework';
 $db_hostname = 'eu-cdbr-azure-west-c.cloudapp.net';
 $db_username = 'befd2db9fe76ad';
@@ -52,7 +51,6 @@ for($j = 0; $j < $rows; ++$j)
     echo 'adventID: ' . mysql_result($result, $j, 'adventID') . '</br>';
    
 }
-</script>
 ?>
 
     <div class="container">
