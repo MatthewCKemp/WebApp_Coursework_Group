@@ -46,15 +46,20 @@
 		mysql_select_db($db_database)
 		or die("Unable to connect to database: " . mysql_error());
     
-		$query = "SELECT * FROM adventure";
+		$query = "SELECT * FROM adventure, images";
 		// execute the SQL query
 		$result = mysql_query($query);
 		if(!$result) die ("Could not query: " . mysql_error());
 		$rows = mysql_num_rows($result);
 		for($j = 0; $j < $rows; ++$j)
 			{	
+				for($i = 0; $i < $rows; ++$i)
+				{
     			echo 'Name: '. mysql_result($result, $j, 'advent_name') . '</br>';
     			echo 'Country: ' . mysql_result($result, $j, 'advent_country') . '</br>';
+    			echo . mysql_result($result, $i, 'image') . '</br>';
+				}
+		
 			}
 	?>
 
