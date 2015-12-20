@@ -1,3 +1,4 @@
+<?php
 
 
 $db_database = 'WebApp_Coursework';
@@ -19,6 +20,7 @@ for($j = 0; $j < $rows; ++$j)
     echo 'adventID: ' . mysql_result($result, $j, 'adventID') . '</br>';
    
 }
+>
 
 
 <html lang="en">
