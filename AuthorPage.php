@@ -1,5 +1,3 @@
-<?php
-
 
 $db_database = 'WebApp_Coursework';
 $db_hostname = 'eu-cdbr-azure-west-c.cloudapp.net';
