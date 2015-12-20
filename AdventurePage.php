@@ -46,7 +46,7 @@
 		mysql_select_db($db_database)
 		or die("Unable to connect to database: " . mysql_error());
     
-		$query = "SELECT * FROM adventure, images";
+		$query = "SELECT * FROM adventure";
 		// execute the SQL query
 		$result = mysql_query($query);
 		if(!$result) die ("Could not query: " . mysql_error());
