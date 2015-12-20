@@ -41,14 +41,14 @@ if(!$db_server) die("Unable to connect to MYSQL: ". mysql_error());
 mysql_select_db($db_database)
     or die("Unable to connect to database: " . mysql_error());
     
-$query = "SELECT * FROM adventure";
+$query = "SELECT * FROM users";
 // execute the SQL query
 $result = mysql_query($query);
 if(!$result) die ("Could not query: " . mysql_error());
 $rows = mysql_num_rows($result);
 for($j = 0; $j < $rows; ++$j)
 {
-    echo 'adventID: ' . mysql_result($result, $j, 'adventID') . '</br>';
+    echo 'adventID: ' . mysql_result($result, $j, 'userID') . '</br>';
    
 }
 ?>
